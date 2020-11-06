@@ -24,3 +24,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.pat }}
         BRANCH: gh-pages
         FOLDER: __sapper__/export/chemistry
+        
