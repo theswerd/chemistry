@@ -1,7 +1,7 @@
 const ghpages = require('gh-pages');
 
 ghpages.publish(
-    '__sapper__/export/chemistry',
+    '/export/chemistry',
     {
         branch: 'master',
         repo: 'https://github.com/theswerd/chemistry.git',
