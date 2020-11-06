@@ -1,6 +1,6 @@
-import { publish } from 'gh-pages';
+const ghpages = require('gh-pages');
 
-publish(
+ghpages.publish(
     '__sapper__/export/chemistry',
     {
         branch: 'master',
