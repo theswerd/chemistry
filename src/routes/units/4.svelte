@@ -1,4 +1,5 @@
 <script>
+
   let ph = "";
   let pOH = "";
   let H = "";
@@ -87,6 +88,12 @@
     OH = "";
     acidity = "-";
   };
+
+  //Ka and Kb data
+  let acidOrBase = 'b';
+  let inputElement = '';
+  let element1 = '';
+  let element2 = '';
 </script>
 
 <style>
@@ -108,7 +115,7 @@
   }
 
   h3 {
-	margin: 0 auto;
+    margin: 0 auto;
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 700;
@@ -195,7 +202,7 @@
     <th>pOH</th>
     <th>[H<sup>+</sup>]</th>
     <th>[OH<sup>-</sup>]</th>
-    <th>Acid / Base/ Neutral</th>
+    <th>Acid / Base  / Neutral</th>
   </tr>
   <tr>
     <td><input type="number" bind:value={ph} on:input={handlePHChange} /></td>
@@ -319,3 +326,46 @@
   </tr>
   <tr />
 </table>
+<h3>K<sub>a</sub> and K<sub>b</sub> expressions</h3>
+<table>
+  <tr>
+    <th>Acid / Base</th>
+    <th style="padding:5px">Water</th>
+    <th style="padding:5px">→</th>
+    <th>Element #1</th>
+	<th>Element #2</th>
+	<th>Acid or Base</th>
+  </tr>
+  <tr>
+    <td><input bind:value={inputElement}/></td>
+    <td>H<sub>2</sub>O (I)</td>
+    <td>→</td>
+    <td><input bind:value={element1}/></td>
+	<td><input bind:value={element2}/></td>
+	<td><select bind:value={acidOrBase}>
+		<option value="a">Acid</option>
+		<option value="b">Base</option>
+	  </select></td>
+  </tr>
+</table>
+<details>
+  <summary>Example</summary>
+  <table>
+    <td>HCN (aq)</td>
+    <td>H<sub>2</sub>O (I)</td>
+    <td>→</td>
+    <td>H<sub>3</sub>O<sup>+</sup> (aq)</td>
+    <td>CN<sup>-</sup> (aq)</td>
+  </table>
+</details>
+<details>
+  <summary>How to determine if an element is an acid or base</summary>
+  <ol>
+	<li>Count the hydrogens on the substance that is before and after the reaction.</li>
+	<li>If the number of hydrogens has decreased that substance is the acid. If the number of hydrogens has increased that substance is the base.</li>
+
+  </ol>
+</details>
+<p>
+	K<sub>{acidOrBase}</sub> = [{element1==''?"Output Element #1": element1}][{element2==''?"Output Element #2": element2}]/[{inputElement==''?"Original Element": inputElement}] {	isNaN(element1) == false && element1 != '' && isNaN(element2) == false && element2 != '' && isNaN(inputElement) == false && inputElement != '' ? " = "+((element1*element2)/inputElement)  :""	}
+</p>
