@@ -8,17 +8,18 @@
   let handlePHChange = () => {
     if (ph === "" || ph === null) {
       emptyValues();
-    }
-    pOH = 14 - ph;
-
-    H = Math.pow(10, -ph);
-    OH = Math.pow(10, -pOH);
-    if (ph > 7) {
-      acidity = "Base";
-    } else if (ph < 7) {
-      acidity = "Acid";
     } else {
-      acidity = "Neutral";
+      pOH = 14 - ph;
+
+      H = Math.pow(10, -ph);
+      OH = Math.pow(10, -pOH);
+      if (ph > 7) {
+        acidity = "Base";
+      } else if (ph < 7) {
+        acidity = "Acid";
+      } else {
+        acidity = "Neutral";
+      }
     }
   };
 
@@ -64,8 +65,8 @@
     if (OH === "" || OH === null) {
       emptyValues();
     } else {
-      ph = -Math.log10(14 - OH);
-      pOH = 14 - ph;
+      pOH = -Math.log10(OH);
+      ph = 14 - pOH;
 
       H = Math.pow(10, -ph);
 
@@ -92,7 +93,7 @@
   h1 {
     text-align: center;
     margin: 0 auto;
-    font-size: 2.8em;
+    font-size: 2.4em;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0 0 0.5em 0;
@@ -100,7 +101,15 @@
 
   h2 {
     margin: 0 auto;
-    font-size: 2em;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+  }
+
+  h3 {
+	margin: 0 auto;
+    font-size: 1em;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0 0 0.5em 0;
@@ -134,6 +143,11 @@
     border-right: 0;
   }
 
+  .conjugateTable tr td {
+    padding: 15px;
+    margin: 15px;
+  }
+
   td {
     margin: 0px;
     text-align: center;
@@ -157,10 +171,13 @@
 
   @media (min-width: 480px) {
     h1 {
-      font-size: 4em;
+      font-size: 2.8em;
     }
     h2 {
-      font-size: 2.8em;
+      font-size: 2em;
+    }
+    h3 {
+      font-size: 1.4em;
     }
   }
 </style>
@@ -189,22 +206,116 @@
   </tr>
 </table>
 <details>
-  <summary>How to:</summary>
+  <summary>How to</summary>
   <ol>
-    <li>1. Calculate PH</li>
+    <li>Calculate PH</li>
     <ul>
-	  <li>PH from pOH: 14 - {pOH == '' ? 'pOH' : pOH} = {ph == '' ? 'PH' : ph}</li>
-	  <li>PH from H: -log<sub>10</sub>({H == '' ? 'H' : H}); = {ph == '' ? 'PH' : ph}</li>
-	  <li>PH from OH: -log<sub>10</sub>(14 - {OH == '' ? 'OH' : OH}) = {ph == '' ? 'PH' : ph}</li>
-
+      <li>
+        PH from pOH: 14 -
+        {pOH == '' ? 'pOH' : pOH}
+        =
+        {ph == '' ? 'PH' : ph}
+      </li>
+      <li>
+        PH from H: -log<sub>10</sub>({H == '' ? 'H' : H}); =
+        {ph == '' ? 'PH' : ph}
+      </li>
+      <li>
+        PH from OH: -log<sub>10</sub>(14 -
+        {OH == '' ? 'OH' : OH}) =
+        {ph == '' ? 'PH' : ph}
+      </li>
     </ul>
-    <li>
-      2. Plug PH In
-      <ul>
-        <li>pOH from PH: 14 - {ph == '' ? 'PH' : ph} = {pOH == '' ? 'pOH':pOH}</li>
-        <li>[H<sup>+</sup>] from PH: 10<sup>-{ph == '' ? 'PH' : ph}</sup> = [{H == '' ? 'H':H}<sup>+</sup>]</li>
-        <li>[OH<sup>-</sup>] from PH: 10<sup>-(14 - {ph == '' ? 'PH' : ph})</sup> = [{OH== '' ? 'OH':OH}<sup>-</sup>]</li>
-      </ul>
-    </li>
+
+    <li>Plug PH In</li>
+    <ul>
+      <li>
+        pOH from PH: 14 -
+        {ph == '' ? 'PH' : ph}
+        =
+        {pOH == '' ? 'pOH' : pOH}
+      </li>
+      <li>
+        [H<sup>+</sup>] from PH: 10<sup>-{ph == '' ? 'PH' : ph}</sup>
+        = [{H == '' ? 'H' : H}<sup>+</sup>]
+      </li>
+      <li>
+        [OH<sup>-</sup>] from PH: 10<sup>-(14 - {ph == '' ? 'PH' : ph})</sup>
+        = [{OH == '' ? 'OH' : OH}<sup>-</sup>]
+      </li>
+    </ul>
   </ol>
 </details>
+<details>
+  <summary>Note Sig Figs</summary>
+  <p>
+    <b>pH</b>
+    and
+    <b>pOH</b>
+    have one
+    <b>1 more</b>
+    decimal place than
+    <b>[H<sup>+</sup>]</b>
+    and
+    <b>[OH<sup>-</sup>]</b>
+  </p>
+</details>
+<div style="height:15px" />
+<h2>Conjugate Bases and Acids</h2>
+<h3>Bases ⇄ Acids</h3>
+<table>
+  <tr>
+    <th style="width:120px" />
+    <th>Bases</th>
+    <th>Acids</th>
+  </tr>
+  <tr>
+    <th>Rule</th>
+    <td style="padding:10px">
+      Bases give away one
+      <b>H</b>, and in most cases, subtract 1 from the charge
+    </td>
+    <td style="padding:10px">
+      Acids take one
+      <b>H</b>, and in most cases, add 1 to the charge
+    </td>
+  </tr>
+  <tr />
+  <tr>
+    <th>Example</th>
+    <td style="text-align:start">
+      <ul>
+        <li><b>H</b>OCl -&gt; OCl<sup>-</sup></li>
+        <li><b>H</b>NO<sub>2</sub> -&gt; NO<sub>2</sub><sup>-</sup></li>
+        <li>
+          <b>H</b><sub>2</sub>SO<sub>3</sub>
+          -&gt;
+          <b>H</b>SO<sub>3</sub><sup>-</sup>
+        </li>
+        <li>
+          <b>H</b>C<sub>2</sub>O<sub>4</sub><sup>-</sup>
+          -&gt; C<sub>2</sub>O<sub>4</sub><sup>2-</sup>
+        </li>
+      </ul>
+    </td>
+    <td style="text-align:start">
+      <ul>
+        <li>N<b>H</b><sub>3</sub> -&gt; N<b>H</b><sub>4</sub><sup>+</sup></li>
+        <li>
+          C<sub>6</sub><b>H</b><sub>5</sub>N<b>H</b><sub>2</sub>
+          -&gt; C<sub>6</sub><b>H</b><sub>5</sub>N<b>H</b><sub><b>3</b></sub><sup>+</sup>
+        </li>
+        <li>
+          <b>H</b>SO<sub>3</sub><sup>-</sup>
+          -&gt;
+          <b>H</b><sub>2</sub>SO<sub>3</sub>
+        </li>
+        <li>
+          C<sub>2</sub>O<sub>4</sub><sup>2-</sup>-&gt;
+          <b>H</b>C<sub>2</sub>O<sub>4</sub><sup>-</sup>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr />
+</table>
