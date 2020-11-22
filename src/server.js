@@ -7,7 +7,7 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 const url = dev ? '/' : 'chemistry';
 
-polka() // You can also use Express
+export default polka() // You can also use Express
 	.use(
 		url,
 		compression({ threshold: 0 }),
