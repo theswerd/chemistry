@@ -3,13 +3,11 @@
   let inputElement = '';
   let element1 = '';
   let element2 = '';
-  import Header2 from '../../../components/Headers/Header2.svelte';
-  import Table from '../../../components/Table.svelte';
 
 </script>
-<Header2>Conjugate Bases and Acids</Header2>
+<h2>Conjugate Bases and Acids</h2>
 <h3>Bases ⇄ Acids</h3>
-<Table>
+<table>
   <tr>
     <th style="width:120px" />
     <th>Bases</th>
@@ -64,9 +62,9 @@
     </td>
   </tr>
   <tr />
-</Table>
+</table>
 <h3>K<sub>a</sub> and K<sub>b</sub> expressions</h3>
-<Table>
+<table>
   <tr>
     <th>Acid / Base</th>
     <th style="padding:5px">Water</th>
@@ -86,16 +84,16 @@
 		<option value="b">Base</option>
 	  </select></td>
   </tr>
-</Table>
+</table>
 <details>
   <summary>Example</summary>
-  <Table>
+  <table>
     <td>HCN (aq)</td>
     <td>H<sub>2</sub>O (I)</td>
     <td>→</td>
     <td>H<sub>3</sub>O<sup>+</sup> (aq)</td>
     <td>CN<sup>-</sup> (aq)</td>
-  </Table>
+  </table>
 </details>
 <details>
   <summary>How to determine if an element is an acid or base</summary>

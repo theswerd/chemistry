@@ -1,8 +1,9 @@
 <script>
-  import Header from "../../components/Headers/Header.svelte";
  
 import PHConversions from "../../components/units/4/pHConversions.svelte";
 import Conjugates from "../../components/units/4/conjugateAcidsAndBases.svelte";
+import Titrations from "../../components/units/4/Titrations.svelte";
+import KaTable from "../../components/units/4/kaTable.svelte";
 
   //Ka and Kb data
   
@@ -12,7 +13,10 @@ import Conjugates from "../../components/units/4/conjugateAcidsAndBases.svelte";
   <title>Unit 4</title>
 </svelte:head>
 
-<Header>Unit 4: Acids & Bases</Header>
+<h1>Unit 4: Acids & Bases</h1>
 <PHConversions/>
 <div style="height:15px" />
 <Conjugates/>
+<Titrations/>
+<div style="height:15px" />
+<KaTable/>

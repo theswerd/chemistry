@@ -1,19 +1,13 @@
+@import 'css/headers.css';
+@import 'css/table.css';
+
+
 body {
 	margin: 0;
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5em 0;
-	font-weight: 400;
-	line-height: 1.2;
-}
-
-h1 {
-	font-size: 2em;
 }
 
 a {
@@ -35,43 +29,7 @@ code {
 	}
 }
 
-table  {
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid black;
-  }
 
-  table td ,
-  table th  {
-    border: 2px solid black;
-  }
-
-  table tr:first-child td ,
-  table tr:first-child th  {
-    border-top: 0;
-  }
-  table tr td:first-child ,
-  table tr th:first-child  {
-    border-left: 0;
-  }
-  table tr:last-child td  ,
-  table tr:last-child th  {
-    border-bottom: 0;
-  }
-  table tr td:last-child  ,
-  table tr th:last-child {
-    border-right: 0;
-  }
-
-  table tr td  {
-    padding: 15px;
-    margin: 15px;
-  }
-
-  td  {
-    margin: 0px;
-    text-align: center;
-  }
 
   input  {
     margin: auto;
@@ -89,11 +47,3 @@ table  {
     outline: none;
   }
 
-  
-  h3 {
-    margin: 0 auto;
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }

@@ -1,6 +1,5 @@
 
 <script>
-import Header2 from '../../Headers/Header2.svelte';
   let ph = "";
   let pOH = "";
   let H = "";
@@ -90,7 +89,7 @@ import Header2 from '../../Headers/Header2.svelte';
     acidity = "-";
   };
 </script>
-<Header2>PH Conversions</Header2>
+<h2>PH Conversions</h2>
 <table>
   <tr>
     <th>PH</th>
