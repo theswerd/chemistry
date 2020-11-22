@@ -1,6 +1,6 @@
 {
   "name": "chemistry",
-  "description": "TODO",
+  "description": "Chemistry",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
