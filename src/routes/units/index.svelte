@@ -35,5 +35,4 @@
 <ul>
     <a href="units/4"><li>Unit 4: Acids & Bases</li></a>
     <li>More coming soon...</li>
-    <li>LI li li li</li>
 </ul>
