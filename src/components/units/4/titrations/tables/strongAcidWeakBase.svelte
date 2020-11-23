@@ -31,7 +31,7 @@
     finalUsedAmount = isAcidLimiting ? endingMolsOfBase : endingMolsOfAcid;
     fullVolume = volumeOfAcid + volumeOfBase;
     finalMolarity = finalUsedAmount / fullVolume;
-    pH = -Math.log(finalMolarity);
+    pH = -Math.log10(finalMolarity);
     pOH = 14 - pH;
   };
 </script>
