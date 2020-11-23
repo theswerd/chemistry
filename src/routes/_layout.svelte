@@ -4,11 +4,14 @@
     Email,
     LinkedIn,
     Facebook,
-	Twitter,
+    Twitter,
   } from "svelte-share-buttons-component";
+  
+
   const title = "Chem.Land";
 
   const url = "https://chem.land";
+ 
   export let segment;
 </script>
 
@@ -22,12 +25,11 @@
     box-sizing: border-box;
   }
   footer {
-	margin: 10px;
+    margin: 10px;
     display: flex;
-	justify-content: center;
-	align-items: flex-end;
+    justify-content: center;
+    align-items: flex-end;
   }
-
 </style>
 
 <Nav {segment} />
