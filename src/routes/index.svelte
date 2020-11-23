@@ -1,5 +1,5 @@
 <script>
-	import fuck from '../assets/fuck.gif';
+	import headslam from '../assets/headslam.gif';
 </script>
 
 <style>
@@ -37,13 +37,13 @@
 </style>
 
 <svelte:head>
-	<title>Fuck Chemistry</title>
+	<title>Chem is Hard</title>
 </svelte:head>
 
-<h1>Fuck Chemistry!</h1>
+<h1>Chem is very hard</h1>
 
 <figure>
-	<img alt="fuck" src="{fuck}">
-	<figcaption>Hopefully this site helps u do good on your next chemistry thing</figcaption>
+	<img alt="headslam" src="{headslam}">
+	<figcaption>Hopefully this site helps you do good on your next chemistry thing</figcaption>
 </figure>
 
