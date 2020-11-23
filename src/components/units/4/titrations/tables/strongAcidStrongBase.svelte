@@ -22,10 +22,10 @@
     fullVolume = volumeOfAcid + volumeOfBase;
     remainingMolarity = remainingMols / fullVolume;
     if (acidIsLimiting) {
-      pOH = Math.log10(remainingMolarity);
+      pOH = -Math.log10(remainingMolarity);
       pH = 14 - pOH;
     } else {
-      pH = Math.log10(remainingMolarity);
+      pH = -Math.log10(remainingMolarity);
       pOH = 14 - pH;
     }
     if (remainingMols == 0) {
@@ -113,6 +113,4 @@
     =
     <b>{acidIsLimiting ? pH : pOH}</b>
   </li>
-
-  <li />
 </ol>
