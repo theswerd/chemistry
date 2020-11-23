@@ -95,7 +95,7 @@
   </li>
   <li>Full Volume = {volumeOfAcid} + {volumeOfBase} = {fullVolume}</li>
   <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li>
-  <li>pH = -log({finalMolarity}) = {pH}</li>
-  <li>pOH = 14 - {pH} = {pOH}</li>
+  <li>pH = -log({finalMolarity}) = <b>{pH}</b></li>
+  <li>pOH = 14 - {pH} = <b>{pOH}</b></li>
 
 </ol>
