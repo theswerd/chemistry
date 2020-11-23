@@ -6,12 +6,15 @@
     Facebook,
     Twitter,
   } from "svelte-share-buttons-component";
-  
 
+  import GoogleAnalytics from "sapper-google-analytics/GoogleAnalytics.svelte";
+  import { stores } from "@sapper/app";
+
+  let ga_measurment_id = "G-M279NV0YWZ";
   const title = "Chem.Land";
 
   const url = "https://chem.land";
- 
+
   export let segment;
 </script>
 
@@ -43,3 +46,4 @@
     <Twitter class="share-button" text={title} {url} />
   </footer>
 </main>
+<GoogleAnalytics {stores} id={ga_measurment_id} />
