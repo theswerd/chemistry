@@ -3,7 +3,7 @@
 	"theme_color": "#333333",
 	"name": "Chem Land",
 	"short_name": "Chem.land",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"start_url": "/",
 	"icons": [
 		{
