@@ -25,7 +25,7 @@
 </table>
 <ol>
   <li>Moles of #1 ={volumeOf2} * (1L / 1000 ml) * {molarityOf2} = <b>{moles} mols</b></li>
-  <li>Moles of #2 = Moles of #2 = {moles}</li>
+  <li>Moles of 2 = Moles of #2 = {moles}</li>
   <li>Molar Mass of #2 = {weightOf1} / {moles} = <b>{weightOf1/moles} g/mol</b></li>
 
 </ol>
