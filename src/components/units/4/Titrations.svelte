@@ -26,5 +26,5 @@
 </table>
 
 <p>
-    M<sub>1</sub>V<sub>1</sub>=M<sub>2</sub>V<sub>2</sub> &#8594; {molarity1 ?? "M"} * {volume1 ?? "V"} = {molarity2 ?? "M"} * x &#8594;  {molarity1} * {volume1}/{molarity2} =  {molarity1 * volume1/molarity2}
+    M<sub>1</sub>V<sub>1</sub>=M<sub>2</sub>V<sub>2</sub> &#8594; {molarity1 ?? "M"} * {volume1 ?? "V"} = {molarity2 ?? "M"} * x &#8594;  {molarity1} * {volume1}/{molarity2} =  <b>{isNaN(molarity1 * volume1/molarity2)?"___":molarity1 * volume1/molarity2}</b>
 </p>
