@@ -99,10 +99,10 @@
     <th>Acid / Base  / Neutral</th>
   </tr>
   <tr>
-    <td><input type="number" bind:value={ph} on:input={handlePHChange} /></td>
-    <td><input type="number" bind:value={pOH} on:input={handlepOHChange} /></td>
-    <td><input type="number" bind:value={H} on:input={handleHChange} /></td>
-    <td><input type="number" bind:value={OH} on:input={handleOHChange} /></td>
+    <td><input type="number" bind:value={ph} on:input={handlePHChange} placeholder="7"/></td>
+    <td><input type="number" bind:value={pOH} on:input={handlepOHChange} placeholder="7"/></td>
+    <td><input type="number" bind:value={H} on:input={handleHChange} placeholder="10^-7"/></td>
+    <td><input type="number" bind:value={OH} on:input={handleOHChange} placeholder="10^-7"/></td>
     <td>{acidity}</td>
   </tr>
 </table>

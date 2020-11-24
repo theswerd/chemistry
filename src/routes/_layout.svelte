@@ -1,12 +1,7 @@
 <script>
   import Nav from "../components/Nav.svelte";
-  import {
-    Email,
-    LinkedIn,
-    Facebook,
-    Twitter,
-  } from "svelte-share-buttons-component";
 
+  import Github from "@icons-pack/svelte-simple-icons/src/components/Github.svelte";
   import GoogleAnalytics from "sapper-google-analytics/GoogleAnalytics.svelte";
   import { stores } from "@sapper/app";
 
@@ -33,6 +28,15 @@
     justify-content: center;
     align-items: flex-end;
   }
+
+  footer a {
+    text-decoration: none;
+    color: #777777;
+    padding: 15px;
+  }
+  footer a:hover {
+    color: black;
+  }
 </style>
 
 <Nav {segment} />
@@ -40,10 +44,12 @@
 <main>
   <slot />
   <footer>
-    <Email subject={title} body={url} />
-    <LinkedIn class="share-button" {url} />
-    <Facebook class="share-button" {url} />
-    <Twitter class="share-button" text={title} {url} />
+      <a href="https://github.com/theswerd/chemistry/issues/new?assignees=&labels=&template=bug_report.md" target="_blank">Report a
+        Bug</a>
+      <a href="https://github.com/theswerd/chemistry/issues/new?assignees=&labels=&template=feature_request.md" target="_blank">Request a
+      Feature</a>
+    <a href="https://github.com/theswerd/chemistry" target="_blank"><Github
+        size={35} /></a>
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />

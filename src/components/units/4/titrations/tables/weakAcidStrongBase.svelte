@@ -13,6 +13,9 @@
   
     let endingMolsOfBase = "";
     let endingMolsOfAcid = "";
+
+    let endingMolarityOfLeft = "";
+    let endingMolarityOfRight = "";
   
     let fullVolume = "";
     let finalUsedAmount = "";
@@ -28,8 +31,17 @@
       limitingReactant = isAcidLimiting ? startingMolsOfAcid : startingMolsOfBase;
       endingMolsOfBase = startingMolsOfBase - limitingReactant;
       endingMolsOfAcid = startingMolsOfAcid - limitingReactant;
+
+      
       finalUsedAmount = isAcidLimiting ? endingMolsOfBase : endingMolsOfAcid;
       fullVolume = volumeOfAcid + volumeOfBase;
+
+      endingMolarityOfLeft = finalUsedAmount/fullVolume;
+      endingMolarityOfRight = limitingReactant/fullVolume;
+      if(startingMolsOfAcid>0!=true){
+        
+      }
+
       finalMolarity = finalUsedAmount / fullVolume;
       pOH = -Math.log10(finalMolarity);
       pH = 14 - pOH;
@@ -95,6 +107,8 @@
     </li>
     <li>Full Volume = {volumeOfAcid} + {volumeOfBase} = {fullVolume}</li>
     <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li>
+    <li>{ka}=x<sup>2</sup> = {finalMolarity}</li>
+
     <li>pOH = -log({finalMolarity}) = <b>{pOH}</b></li>
     <li>pH = 14 - {pOH} = <b>{pH}</b></li>
   

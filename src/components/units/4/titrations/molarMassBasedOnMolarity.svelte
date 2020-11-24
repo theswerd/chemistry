@@ -18,9 +18,9 @@
     <th>Molarity of Element #2 (M)</th>
   </tr>
   <tr>
-    <td><input bind:value={weightOf1} on:input={onChange} type="number" /></td>
-    <td><input bind:value={volumeOf2} on:input={onChange} type="number" /></td>
-    <td><input bind:value={molarityOf2} on:input={onChange} type="number" /></td>
+    <td><input bind:value={weightOf1} on:input={onChange} type="number" placeholder="0"/></td>
+    <td><input bind:value={volumeOf2} on:input={onChange} type="number" placeholder="0"/></td>
+    <td><input bind:value={molarityOf2} on:input={onChange} type="number" placeholder="0"/></td>
   </tr>
 </table>
 <ol>

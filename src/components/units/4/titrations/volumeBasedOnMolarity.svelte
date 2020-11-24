@@ -17,9 +17,9 @@
     <th>Volume</th>
   </tr>
   <tr>
-    <td><input bind:value={molarity1} type="number"></td>
-    <td><input bind:value={volume1}  type="number"/></td>
-    <td><input bind:value={molarity2}  type="number"/></td>
+    <td><input bind:value={molarity1} type="number" placeholder="0"></td>
+    <td><input bind:value={volume1}  type="number" placeholder="0"/></td>
+    <td><input bind:value={molarity2}  type="number" placeholder="0"/></td>
     <td>-</td>
   </tr>
 </table>

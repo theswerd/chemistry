@@ -48,19 +48,29 @@
       <input
         type="number"
         bind:value={molarityOfAcid}
-        on:input={handleUpdate} />
+        on:input={handleUpdate}
+        placeholder="0" />
     </th>
     <th>
-      <input type="number" bind:value={volumeOfAcid} on:input={handleUpdate} />
+      <input
+        type="number"
+        bind:value={volumeOfAcid}
+        on:input={handleUpdate}
+        placeholder="0" />
     </th>
     <th>
       <input
         type="number"
         bind:value={molarityOfBase}
-        on:input={handleUpdate} />
+        on:input={handleUpdate}
+        placeholder="0" />
     </th>
     <th>
-      <input type="number" bind:value={volumeOfBase} on:input={handleUpdate} />
+      <input
+        type="number"
+        bind:value={volumeOfBase}
+        on:input={handleUpdate}
+        placeholder="0" />
     </th>
   </tr>
 </table>
