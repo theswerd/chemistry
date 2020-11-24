@@ -45,11 +45,9 @@
       (volumeOfBase ?? "").toString();
 
     if (!filledInMols) {
-      console.log("NOT FILLED IN MOLES");
-      console.log(molarityOfAcid);
+    
       return;
     } else {
-      console.log(filledInMols);
     }
 
     startingMolsOfBase = (molarityOfBase * volumeOfBase) / 1000;
@@ -95,7 +93,6 @@
       } else {
         ka = Math.pow(10, -14) / kb;
         endingMolarityOfAcid = endingMolsOfAcid / fullVolume;
-        console.log(endingMolarityOfAcid);
         pH = -Math.log10(endingMolarityOfAcid);
         pOH = 14 - pH;
       }
@@ -164,7 +161,7 @@
         <li>
           [H<sup>-</sup>] = &#8730;({endingMolarityOfConjugateAcid}
           *
-          {kb}) =
+          {ka}) =
           {H}
         </li>
         <li>pH = -log({H}) =<b>{pH}</b></li>
