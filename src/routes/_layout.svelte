@@ -3,7 +3,7 @@
 
   import Github from "@icons-pack/svelte-simple-icons/src/components/Github.svelte";
   import Instagram from "@icons-pack/svelte-simple-icons/src/components/Instagram.svelte";
-  import LinkedIn from "@icons-pack/svelte-simple-icons/src/components/LinkedIn.svelte";
+  //import LinkedIn from "@icons-pack/svelte-simple-icons/src/components/LinkedIn.svelte";
 
   import GoogleAnalytics from "sapper-google-analytics/GoogleAnalytics.svelte";
   import { stores } from "@sapper/app";
@@ -58,8 +58,8 @@
         size={25} /></a>
     <a href="https://instagram.com/ben_swerdlow" target="_blank"><Instagram
         size={25} /></a>
-    <a href="https://www.linkedin.com/in/benswerdlow/" target="_blank"><LinkedIn
-        size={25} /></a>
+    <!-- <a href="https://www.linkedin.com/in/benswerdlow/" target="_blank"><LinkedIn
+        size={25} /></a> -->
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />
