@@ -9,9 +9,6 @@
   import { stores } from "@sapper/app";
 
   let ga_measurment_id = "G-M279NV0YWZ";
-  const title = "Chem.Land";
-
-  const url = "https://chem.land";
 
   export let segment;
 </script>

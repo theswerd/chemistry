@@ -1,4 +1,6 @@
 <script>
+  import Notification from "../../../../notification.svelte";
+
   let molarityOfAcid = "";
   let molarityOfBase = "";
   let volumeOfAcid = "";
@@ -8,31 +10,96 @@
   let startingMolsOfBase = "";
   let startingMolsOfAcid = "";
 
+  let filledInMols = false;
+  let zeroAcid = false;
+
   let isAcidLimiting = false;
+  let atEquivalencePoint = false;
+
   let limitingReactant = "";
 
   let endingMolsOfBase = "";
   let endingMolsOfAcid = "";
+  let endingMolsOfConjugateAcid = "";
+
+  let endingMolarityOfBase = "";
+  let endingMolarityOfAcid = "";
+
+  let endingMolarityOfConjugateAcid = "";
 
   let fullVolume = "";
-  let finalUsedAmount = "";
-  let finalMolarity = "";
+
+  let pkb = "";
+  let ka = "";
+  let H = "";
+  let OH = "";
 
   let pOH = "";
   let pH = "";
 
   let handleChange = () => {
-    startingMolsOfBase = molarityOfBase * volumeOfBase;
-    startingMolsOfAcid = molarityOfAcid * volumeOfAcid;
+    filledInMols =
+      (molarityOfAcid ?? "").toString() &&
+      (volumeOfAcid ?? "").toString() &&
+      (molarityOfBase ?? "").toString() &&
+      (volumeOfBase ?? "").toString();
+
+    if (!filledInMols) {
+      console.log("NOT FILLED IN MOLES");
+      console.log(molarityOfAcid);
+      return;
+    } else {
+      console.log(filledInMols);
+    }
+
+    startingMolsOfBase = (molarityOfBase * volumeOfBase) / 1000;
+    startingMolsOfAcid = (molarityOfAcid * volumeOfAcid) / 1000;
+
+    fullVolume = (volumeOfAcid + volumeOfBase) / 1000;
+
+    zeroAcid = startingMolsOfAcid == 0;
+
+    atEquivalencePoint =
+      startingMolsOfAcid === startingMolsOfBase &&
+      !isNaN(startingMolsOfAcid) &&
+      !isNaN(startingMolsOfBase) &&
+      filledInMols;
+      
     isAcidLimiting = startingMolsOfAcid < startingMolsOfBase;
     limitingReactant = isAcidLimiting ? startingMolsOfAcid : startingMolsOfBase;
+
     endingMolsOfBase = startingMolsOfBase - limitingReactant;
     endingMolsOfAcid = startingMolsOfAcid - limitingReactant;
-    finalUsedAmount = isAcidLimiting ? endingMolsOfBase : endingMolsOfAcid;
-    fullVolume = volumeOfAcid + volumeOfBase;
-    finalMolarity = finalUsedAmount / fullVolume;
-    pH = -Math.log10(finalMolarity);
-    pOH = 14 - pH;
+    endingMolsOfConjugateAcid = limitingReactant;
+
+    endingMolarityOfConjugateAcid = endingMolsOfConjugateAcid / fullVolume;
+    if (zeroAcid) {
+      OH = Math.sqrt(molarityOfBase * kb);
+      pOH = -Math.log10(OH);
+      pH = 14 - pOH;
+    } else if (atEquivalencePoint) {
+      /* WORKS WITH BASE OR ACID */
+      ka = Math.pow(10, -14) / kb;
+
+      H = Math.sqrt(endingMolarityOfConjugateAcid * ka);
+      pH = -Math.log10(H);
+      pOH = 14 - pH;
+    } else {
+      if (isAcidLimiting) {
+        endingMolarityOfBase = endingMolsOfBase / fullVolume;
+        pkb = -Math.log10(kb);
+        pOH =
+          pkb -
+          Math.log10(endingMolarityOfBase / endingMolarityOfConjugateAcid);
+        pH = 14 - pOH;
+      } else {
+        ka = Math.pow(10, -14) / kb;
+        endingMolarityOfAcid = endingMolsOfAcid / fullVolume;
+        console.log(endingMolarityOfAcid);
+        pH = -Math.log10(endingMolarityOfAcid);
+        pOH = 14 - pH;
+      }
+    }
   };
 </script>
 
@@ -67,35 +134,130 @@
     <td><input type="number" bind:value={kb} on:input={handleChange} /></td>
   </tr>
 </table>
-<ol>
-  <li>{molarityOfBase} * {volumeOfBase} = {startingMolsOfBase} mols Base</li>
-  <li>{molarityOfAcid} * {volumeOfAcid} = {startingMolsOfAcid} mols Acid</li>
-  <li>{isAcidLimiting ? 'Acid' : 'Base'} is limiting</li>
-  <li>
-    <table>
-      <tr>
-        <td>{startingMolsOfBase}</td>
-        <td>{startingMolsOfAcid}</td>
-        <td>&#8594;</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>-{limitingReactant}</td>
-        <td>-{limitingReactant}</td>
-        <td>&#8594;</td>
-        <td>+{limitingReactant}</td>
-      </tr>
-      <tr>
-        <td>{endingMolsOfBase}</td>
-        <td>{endingMolsOfAcid}</td>
-        <td>&#8594;</td>
-        <td>{limitingReactant}</td>
-      </tr>
-    </table>
-  </li>
-  <li>Full Volume = {volumeOfAcid} + {volumeOfBase} = {fullVolume}</li>
-  <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li>
-  <li>pH = -log({finalMolarity}) = <b>{pH}</b></li>
-  <li>pOH = 14 - {pH} = <b>{pOH}</b></li>
 
-</ol>
+{#if filledInMols}
+  {#if atEquivalencePoint}
+    <Notification>This is at the equivalence point</Notification>
+  {/if}
+  <ol>
+    <li>
+      {molarityOfBase}
+      *
+      {volumeOfBase}
+      =
+      {startingMolsOfBase}
+      mols
+      {atEquivalencePoint ? '' : 'Base'}
+    </li>
+    {#if !zeroAcid}
+      {#if atEquivalencePoint}
+        <li>
+          {startingMolsOfBase}
+          /
+          {fullVolume}
+          =
+          {endingMolarityOfConjugateAcid}
+          M
+        </li>
+        <li>10<sup>-14</sup> = Ka * {kb}</li>
+        <li>Ka = 10<sup>-14</sup>/{kb} = {ka}</li>
+        <li>
+          [H<sup>-</sup>] = &#8730;({endingMolarityOfConjugateAcid}
+          *
+          {kb}) =
+          {H}
+        </li>
+        <li>pH = -log({H}) =<b>{pH}</b></li>
+        <li>pOH = 14 - {pH} = <b>{pOH}</b></li>
+      {:else}
+        <li>
+          {molarityOfAcid}
+          *
+          {volumeOfAcid}
+          =
+          {startingMolsOfAcid}
+          mols Acid
+        </li>
+        <li>{isAcidLimiting ? 'Acid' : 'Base'} is limiting</li>
+
+        <li>
+          <table>
+            <tr>
+              <th>B</th>
+              <td>{startingMolsOfBase}</td>
+              <td>{startingMolsOfAcid}</td>
+              <td>&#8594;</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>C</th>
+              <td>-{limitingReactant}</td>
+              <td>-{limitingReactant}</td>
+              <td>&#8594;</td>
+              <td>+{limitingReactant}</td>
+            </tr>
+            <tr>
+              <th>A</th>
+              <td>{endingMolsOfBase}</td>
+              <td>{endingMolsOfAcid}</td>
+              <td>&#8594;</td>
+              <td>{endingMolsOfConjugateAcid}</td>
+            </tr>
+          </table>
+        </li>
+
+        <li>Full Volume = {volumeOfAcid} + {volumeOfBase} = {fullVolume}</li>
+        {#if isAcidLimiting}
+          <li>
+            Molarity of Base =
+            {endingMolsOfBase}
+            /
+            {fullVolume}
+            =
+            {endingMolarityOfBase}
+          </li>
+          <li>
+            Molarity of Conjugate Acid =
+            {endingMolsOfConjugateAcid}
+            /
+            {fullVolume}
+            =
+            {endingMolarityOfConjugateAcid}
+          </li>
+          <li>pKb = -log({kb}) = {pkb}</li>
+          <!-- <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li> -->
+          <li>
+            pOH =
+            {pkb}
+            - log({endingMolarityOfBase}
+            /
+            {endingMolarityOfConjugateAcid}) =
+            <b>{pOH}</b>
+          </li>
+          <li>pH = 14 - {pOH} = <b>{pH}</b></li>
+        {:else}
+          <li>Ka = 10<sup>-14</sup> / {kb} = {ka}</li>
+          <li>
+            Molarity of acid =
+            {endingMolsOfAcid}
+            /
+            {fullVolume}
+            =
+            {endingMolarityOfAcid}
+          </li>
+          <li>pH = log({endingMolarityOfAcid}) = <b>{pH}</b></li>
+          <li>pOH = 14 - {pH} = <b>{pOH}</b></li>
+        {/if}
+      {/if}
+    {:else}
+      <!-- OH = Math.sqrt(molarityOfBase * kb);
+      pOH = -Math.log10(OH);
+      pH = 14 - pOH; -->
+
+      <li>{kb} = x<sup>2</sup> / {molarityOfBase}</li>
+      <li>x = &#8730;({molarityOfBase} * {kb}) = {OH} M [OH<sup>-</sup>]</li>
+      <li>pOH = -log({OH}) = <b>{pOH}</b></li>
+      <li>pH = 14 - {pOH} = <b>{pH}</b></li>
+    {/if}
+  </ol>
+{/if}

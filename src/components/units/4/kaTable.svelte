@@ -4,7 +4,7 @@
     { acid: "iodic acid", formula: "HIO<sub>3<sub/>", ka: "0.17", pka: 0.77 },
     { acid: "oxalic acid", formula: "H<sub>2</sub>C<sub>2</sub>O<sub>4<sub/>", ka: "5.9*10‒2", pka: 1.23 },
     {
-      acid: "acidsulphurous acid",
+      acid: "sulphurous acid",
       formula: "H<sub>2</sub>SO<sub>3</sub>",
       ka: "1.5*10‒2",
       pka: 1.82,
