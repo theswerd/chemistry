@@ -1,7 +1,12 @@
 <script>
 import Tag from "../../components/tag.svelte";
-let value;
-let handleInput = ()=>{};
+import { validateSearch } from '../../logic/search';
+let value = "";
+let handleInput = ()=>{
+    console.log("value", value);
+
+    let smh = validateSearch(value);
+};
 </script>
 <h1>
     Search
@@ -10,7 +15,7 @@ let handleInput = ()=>{};
     <h2>
         Given
     </h2>
-    <p contenteditable='true' bind:innerHTML={value} on:input={handleInput}>
-    {@html value}
+    <p contenteditable='true' bind:innerHTML={value} on:input={handleInput} >
+    
     </p>
 </div>
