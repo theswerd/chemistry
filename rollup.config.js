@@ -8,6 +8,9 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import autoPreprocess from 'svelte-preprocess';
+import typescript from '@rollup/plugin-typescript';
+//import typescript from "rollup-plugin-typescript2"; // add
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -20,7 +23,7 @@ const onwarn = (warning, onwarn) =>
 
 export default {
 	client: {
-		input: config.client.input(),
+		input: config.client.input().replace(/\.js$/, ".ts"), // edit here
 		output: config.client.output(),
 		plugins: [
 			replace({
@@ -30,8 +33,10 @@ export default {
 			svelte({
 				dev,
 				hydratable: true,
-				emitCss: true
+				emitCss: true,
+				preprocess: autoPreprocess(),
 			}),
+			typescript(),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
 				publicPath: '/client/'
@@ -69,7 +74,7 @@ export default {
 	},
 
 	server: {
-		input: config.server.input(),
+		input: config.server.input().server.replace(/\.js$/, ".ts"),
 		output: config.server.output(),
 		plugins: [
 			replace({
@@ -79,6 +84,7 @@ export default {
 			svelte({
 				generate: 'ssr',
 				hydratable: true,
+				preprocess: autoPreprocess(),
 				dev
 			}),
 			url({
@@ -89,7 +95,9 @@ export default {
 			resolve({
 				dedupe: ['svelte']
 			}),
-			commonjs()
+			commonjs(),
+			typescript(),
+
 		],
 		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 

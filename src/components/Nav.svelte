@@ -1,7 +1,7 @@
-<script>
+<script lang="typescript">
   import Tag from "./tag.svelte";
 
-  export let segment;
+  export let segment: string;
 </script>
 
 <style>
@@ -19,9 +19,8 @@
   /* clearfix */
   ul::after {
     content: "";
-	clear: both;
-	display: block;
-    
+    clear: both;
+    display: block;
   }
 
   li {
@@ -70,14 +69,13 @@
         href="units">SUBJECTS</a>
     </li>
     <li>
-      
-        <a
-          rel="prefetch"
-          aria-current={segment === 'search' ? 'page' : undefined}
-          href="search">SEARCH</a>
-        <sup>
-          <Tag margin="0px 0px 0px -10px" color="yellow">In Development</Tag>
-        </sup>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'search' ? 'page' : undefined}
+        href="search">SEARCH</a>
+      <sup>
+        <Tag margin="0px 0px 0px -10px" color="yellow">In Development</Tag>
+      </sup>
     </li>
   </ul>
 </nav>

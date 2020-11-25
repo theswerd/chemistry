@@ -1,0 +1,19 @@
+{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "include": [
+        "src/**/*",
+        "src/node_modules"
+    ],
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "es2015",
+        "types": [
+            "svelte",
+            "node",
+            "@sapper"
+        ],
+        "typeRoots": [
+            "typings"
+        ]
+    }
+}
