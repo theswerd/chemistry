@@ -2,7 +2,7 @@
   "extends": "@tsconfig/svelte/tsconfig.json",
   "include": ["src/**/*", "src/node_modules"],
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2015",
     "module": "es2020",
     "types": ["svelte", "node", "@sapper"],
     "typeRoots": ["typings"]
