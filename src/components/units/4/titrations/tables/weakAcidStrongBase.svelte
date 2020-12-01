@@ -163,8 +163,9 @@
           {kbb}) =
           {OHH}
         </li>
-        <li>pH = -log({OHH}) =<b>{pOHH}</b></li>
-        <li>pOH = 14 - {pOHH} = <b>{pHH}</b></li>
+        <!--PH AND POH ARE REVERSED-->
+        <li>pOH = -log({OHH}) =<b>{pOHH}</b></li>
+        <li>pH = 14 - {pOHH} = <b>{pHH}</b></li>
       {:else}
         <li>
           {molarityOfBase}
@@ -219,16 +220,16 @@
             {endingMolarityOfConjugateBase}
           </li>
           <li>pKb = -log({kaa}) = {pka}</li>
-          <!-- <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li> -->
+          <!-- PH AND POH VALUES REVERSED HERE TODO: FIX-->
           <li>
-            pOH =
+            pH =
             {pka}
             - log({endingMolarityOfAcid}
             /
             {endingMolarityOfConjugateBase}) =
             <b>{pOHH}</b>
           </li>
-          <li>pH = 14 - {pOHH} = <b>{pHH}</b></li>
+          <li>pOH = 14 - {pOHH} = <b>{pHH}</b></li>
         {:else}
           <li>
             Molarity of base =
