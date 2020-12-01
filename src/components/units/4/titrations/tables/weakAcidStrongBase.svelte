@@ -221,14 +221,14 @@
           <li>pKb = -log({kaa}) = {pka}</li>
           <!-- <li>{finalUsedAmount}/{fullVolume} = {finalMolarity}</li> -->
           <li>
-            pH =
+            pOH =
             {pka}
             - log({endingMolarityOfAcid}
             /
             {endingMolarityOfConjugateBase}) =
             <b>{pOHH}</b>
           </li>
-          <li>pOH = 14 - {pOHH} = <b>{pHH}</b></li>
+          <li>pH = 14 - {pOHH} = <b>{pHH}</b></li>
         {:else}
           <li>
             Molarity of base =
