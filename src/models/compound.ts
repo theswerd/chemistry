@@ -18,55 +18,61 @@ export class Compound {
     get hasName(): boolean {
         return name != undefined;
     }
-    get isNameValid(): boolean {
-        // TODO: IMPLEMENT
-        return false;
-    }
-    get canSolveForName(): boolean {
-        return this.isChemicalEquationValid;
-    }
-
-    get solveForName(): string {
-        //TODO: IMPLEMENT
-        return "Name";
-    }
     
     public chemicalEquation?: string;
-    get isChemicalEquationValid(): boolean {
-        // TODO: IMPLEMENT
-        return false;
+    get hasChemicalEquation(): boolean {
+        return this.chemicalEquation != undefined;
     }
-    get canSolveForChemicalEquation(): boolean {
-        // TODO: IMPLEMENT
-        return this.isNameValid;
-    }
-    get solveForChemicalEquation(): string {
-        return "Chemical Equation"
-    }
+
     
     public pH?: number;
-    get isPHValid(): boolean {
-        return !isNaN(this.pH);
-    }
-    get canSolveForPH(): boolean {
-        return !isNaN(this.pH);
+    get hasPH(): boolean {
+        return this.pH != undefined;
     }
 
     public pOH?: number;
+    get hasPOH(): boolean {
+        return this.pOH != undefined;
+    }
+
     public OH?: number;
+    get hasOH(): boolean {
+        return this.OH != undefined;
+    }
     public H?: number;
+    get hasH(): boolean {
+        return this.H != undefined;
+    }
+
     public mols?: number;
+    get hasMols(): boolean {
+        return this.mols != undefined;
+    }
+
     public molarMass?: number;
+    get hasMolarMass(): boolean {
+        return this.molarMass != undefined;
+    }
+
     public molarity?: number;
+    get hasMolarity(): boolean {
+        return this.hasMolarity != undefined;
+    }
+
     public weight?: number;
+    get hasWeight(): boolean {
+        return this.chemicalEquation != undefined;
+    }
+
     public volume?: number;
+    get hasVolume(): boolean {
+        return this.hasVolume != undefined;
+    }
 
     constructor({ name, chemicalEquation, pH, pOH, OH, H, mols, molarMass, molarity, weight, volume }: Compound) {
         Object.assign(this, { name, chemicalEquation, pH, pOH, OH, H, mols, molarMass, molarity, weight, volume });
 
     }
-
-
 }
 
 export default Compound

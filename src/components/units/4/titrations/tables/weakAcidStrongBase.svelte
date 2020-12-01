@@ -223,7 +223,7 @@
           <li>
             pH =
             {pka}
-            - log({endingMolarityOfBase}
+            - log({endingMolarityOfAcid}
             /
             {endingMolarityOfConjugateBase}) =
             <b>{pHH}</b>

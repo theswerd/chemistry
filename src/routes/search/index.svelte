@@ -1,27 +1,28 @@
 <script lang="ts">
   import Tag from "../../components/tag.svelte";
-  import { validateSearch } from "../../logic/search";
+  import parse_input from "../../logic/parse_input";
 
   let value = "compound: 3 a, 6 b, ?c";
 
-  const types = ["compound"];
+  $: output = parse_input(value);
+ // const types = ["compound"];
 
-  $: output = value.split(";").map((block) => ({
-    type: block.split(":")[0],
-    values: (block.split(":")[1] ?? "").split(","),
-  }));
+  // $: output = value.split(";").map((block) => ({
+  //   type: block.split(":")[0],
+  //   values: (block.split(":")[1] ?? "").split(","),
+  // }));
 
-  const handleKeydown = (e) => {
-    console.log(e);
-    switch (e.key) {
-      case "Backspace":
-        return (value = value.slice(0, -1));
-      case "Shift":
-        break;
-      default:
-        return (value = value + e.key);
-    }
-  };
+  // const handleKeydown = (e) => {
+  //   console.log(e);
+  //   switch (e.key) {
+  //     case "Backspace":
+  //       return (value = value.slice(0, -1));
+  //     case "Shift":
+  //       break;
+  //     default:
+  //       return (value = value + e.key);
+  //   }
+  // };
 </script>
 
 <style>
@@ -52,13 +53,16 @@
   }
 </style>
 
-<svelte:window on:keydown={handleKeydown} />
+<!-- <svelte:window on:keydown={handleKeydown} /> -->
 
 <entry>
-  {#each output as block}
+
+  <textarea contenteditable="true" bind:value={value}></textarea>
+  <!-- {#each output as block}
     <type>{block.type}</type>
     {#each block.values as value}
       <value>{value}</value>
     {/each}
-  {/each}
+  {/each} -->
+  {output}
 </entry>
