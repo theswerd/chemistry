@@ -226,9 +226,9 @@
             - log({endingMolarityOfAcid}
             /
             {endingMolarityOfConjugateBase}) =
-            <b>{pHH}</b>
+            <b>{pOHH}</b>
           </li>
-          <li>pOH = 14 - {pHH} = <b>{pOHH}</b></li>
+          <li>pOH = 14 - {pOHH} = <b>{pHH}</b></li>
         {:else}
           <li>
             Molarity of base =
