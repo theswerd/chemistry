@@ -3,7 +3,7 @@
     let heat;
     let mass;
 
-    $: mass = hreq * heat;
+    $: mass = hreq / heat;
 </script>
 <h2>Moles from Heat Requirement and ΔHeat</h2>
 <table>
@@ -18,9 +18,6 @@
 </table>
 <ul>
     <li>
-        {heat == null? "Heat": null} * {hreq == null? "Hreq": hreq} = <b>{mass == null || isNaN(mass)? "Mass": mass} mols</b>
+        {heat == null? "Heat": null} / {hreq == null? "Hreq": hreq} = <b>{mass == null || isNaN(mass)? "Mass": mass} mols</b>
     </li>
 </ul>
-<!-- //ΔH = Heat (J)
-Hfus = Heat of Fusion (J/g)
-m = mass (g) -->
