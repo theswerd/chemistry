@@ -68,7 +68,7 @@
         aria-current={segment === 'units' ? 'page' : undefined}
         href="units">SUBJECTS</a>
     </li>
-    <li>
+    <!-- <li>
       <a
         rel="prefetch"
         aria-current={segment === 'search' ? 'page' : undefined}
@@ -76,6 +76,6 @@
       <sup>
         <Tag margin="0px 0px 0px -10px" color="yellow">In Development</Tag>
       </sup>
-    </li>
+    </li> -->
   </ul>
 </nav>

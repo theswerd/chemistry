@@ -5,24 +5,7 @@
   let value = "compound: 3 a, 6 b, ?c";
 
   $: output = parse_input(value);
- // const types = ["compound"];
-
-  // $: output = value.split(";").map((block) => ({
-  //   type: block.split(":")[0],
-  //   values: (block.split(":")[1] ?? "").split(","),
-  // }));
-
-  // const handleKeydown = (e) => {
-  //   console.log(e);
-  //   switch (e.key) {
-  //     case "Backspace":
-  //       return (value = value.slice(0, -1));
-  //     case "Shift":
-  //       break;
-  //     default:
-  //       return (value = value + e.key);
-  //   }
-  // };
+ 
 </script>
 
 <style>
