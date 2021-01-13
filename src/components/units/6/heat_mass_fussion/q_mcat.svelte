@@ -36,6 +36,6 @@
 </table>
 <ul>
     <li>
-        {heat == null? "ΔHeat (J)": heat} = {mass == null? "Mass (g)": mass} * {heat_capacity == null? "Heat Capacity (J/g°C)": heat_capacity} * {temp_change == null? "Change in temp": temp_change}
+        {heat == null? "ΔHeat (J)": heat} = {mass == null? "Mass (g)": mass} * {heat_capacity == null? "Heat Capacity (J/g°C)": heat_capacity} * {temp_change == null? "Change in temp(Final Temp (°C) - Initial Temp (°C))": temp_change}
     </li>
 </ul>
