@@ -33,6 +33,8 @@
 <h1>Subjects</h1>
 
 <ul>
-    <a href="units/4"><li>Unit 4: Acids & Bases</li></a>
+	<a href="units/4"><li>Unit 4: Acids & Bases</li></a>
+    <a href="units/6"><li>Unit 6: Thermochemistry</li></a>
+
     <li>More coming soon...</li>
 </ul>

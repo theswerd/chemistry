@@ -1,10 +1,6 @@
 <script>
   import Nav from "../components/Nav.svelte";
 
-  import Github from "@icons-pack/svelte-simple-icons/src/components/Github.svelte";
-  import Instagram from "@icons-pack/svelte-simple-icons/src/components/Instagram.svelte";
-  import LinkedIn from "@icons-pack/svelte-simple-icons/src/components/Linkedin.svelte";
-
   import GoogleAnalytics from "sapper-google-analytics/GoogleAnalytics.svelte";
   import { stores } from "@sapper/app";
 
@@ -51,12 +47,10 @@
     <a
       href="https://github.com/theswerd/chemistry/issues/new?assignees=&labels=&template=feature_request.md"
       target="_blank">Request a Feature</a>
-    <a href="https://github.com/theswerd/chemistry" target="_blank"><Github
-        size={25} /></a>
-    <a href="https://instagram.com/ben_swerdlow" target="_blank"><Instagram
-        size={25} /></a>
-    <a href="https://www.linkedin.com/in/benswerdlow/" target="_blank"><LinkedIn
-        size={25} /></a>
+      <a
+      href="https://github.com/sponsors/theswerd"
+      target="_blank">Support Chem.land</a>
+
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />
