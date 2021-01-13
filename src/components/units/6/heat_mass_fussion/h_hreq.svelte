@@ -8,7 +8,7 @@
 <h3>Moles from Heat Requirement and ΔHeat</h3>
 <table>
     <tr>
-        <th>H<sub>___</sub> (J/g)</th>
+        <th>H<sub>req</sub> (J/g)</th>
         <th>Heat (J)</th>
     </tr>
     <tr>
