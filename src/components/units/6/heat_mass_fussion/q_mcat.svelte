@@ -50,8 +50,21 @@
 </button>
 <ul>
     <li>
-<<<<<<< HEAD
-        {heat == null? "ΔHeat (J)": heat+"(J)"} = {mass == null? "Mass (g)": mass+"(g)"} * {heat_capacity == null? "Heat Capacity (J/g°C)": heat_capacity+"(J/g°C)"} * {temp_change == null? "Change in temp(Final Temp (°C) - Initial Temp (°C))": temp_change+"(Final Temp °C - Initial Temp °C)"}
+        <b style="font-weight: {make_bold == 1 ? 'bold' : 'normal'}">
+            {heat == null ? 'ΔHeat (J)' : heat.toString() + '(J)'}
+        </b>
+        =
+        <b style="font-weight: {make_bold == 2 ? 'bold' : 'normal'}">
+            {mass == null ? 'Mass (g)' : mass.toString() + '(g)'}
+        </b>
+        *
+        <b style="font-weight: {make_bold == 3 ? 'bold' : 'normal'}">
+            {heat_capacity == null ? 'Heat Capacity (J/g°C)' : heat_capacity.toString() + '(J/g°C)'}
+        </b>
+        *
+        <b style="font-weight: {make_bold == 4 ? 'bold' : 'normal'}">
+            {temp_change == null ? 'Change in temp(Final Temp (°C) - Initial Temp (°C))' : temp_change.toString() + '(Final Temp - Initial Temp)'}
+        </b>
     </li>
 </ul>
 <style>
@@ -68,23 +81,3 @@
         background-color: red;
     }
 </style> 
-=======
-        <text style="font-weight: {make_bold == 1 ? 'bold' : 'normal'}">
-            {heat == null ? 'ΔHeat (J)' : heat.toString() + '(J)'}
-        </text>
-        =
-        <text style="font-weight: {make_bold == 2 ? 'bold' : 'normal'}">
-            {mass == null ? 'Mass (g)' : mass.toString() + '(g)'}
-        </text>
-        *
-        <text style="font-weight: {make_bold == 3 ? 'bold' : 'normal'}">
-            {heat_capacity == null ? 'Heat Capacity (J/g°C)' : heat_capacity.toString() + '(J/g°C)'}
-        </text>
-        *
-        <text style="font-weight: {make_bold == 4 ? 'bold' : 'normal'}">
-            {temp_change == null ? 'Change in temp(Final Temp (°C) - Initial Temp (°C))' : temp_change.toString() + '(Final Temp - Initial Temp)'}
-        </text>
-    </li>
-</ul>
-<button on:click={handleClick}> Click me </button>
->>>>>>> 75745b76f6c780de8e2d89d0b8d3012d69cc04fb
