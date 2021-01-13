@@ -68,6 +68,14 @@
         aria-current={segment === 'units' ? 'page' : undefined}
         href="units">SUBJECTS</a>
     </li>
+    <li>
+      <iframe
+        src="https://github.com/sponsors/theswerd/button"
+        title="Sponsor theswerd"
+        height="35"
+        width="116"
+        style="border: 0; margin-top: 10px;" />
+    </li>
     <!-- <li>
       <a
         rel="prefetch"
