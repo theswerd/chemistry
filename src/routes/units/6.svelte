@@ -2,6 +2,7 @@
 import HHreq from "../../components/units/6/heat_mass_fussion/h_hreq.svelte";
 import HMass from "../../components/units/6/heat_mass_fussion/h_mass.svelte";
 import HreqMass from "../../components/units/6/heat_mass_fussion/hreq_mass.svelte";
+import Qmcat from "../../components/units/6/heat_mass_fussion/q_mcat.svelte"
 import ThermodynamicData from "../../components/units/6/thermodynamic_data.svelte";
 
 </script>
@@ -17,4 +18,5 @@ import ThermodynamicData from "../../components/units/6/thermodynamic_data.svelt
 <HHreq/>
 <HMass/>
 <HreqMass/>
+<Qmcat/>
 <ThermodynamicData/>
