@@ -6,7 +6,6 @@
     $: hreq = heat / mass;
 </script>
 <h3>H<sub>req</sub> from ΔHeat and Mass</h3>
-<p>*H<sub>req</sub> represents H<sub>vap</sub> or H<sub>fus</sub></p>
 <table>
     <tr>
         <th>Mass (mols)</th>

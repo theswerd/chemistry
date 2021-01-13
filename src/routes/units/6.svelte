@@ -13,6 +13,7 @@ import ThermodynamicData from "../../components/units/6/thermodynamic_data.svelt
 <p style="text-align:center">Note: This page is currently under development, there are no guarantees that answers are correct</p>
 <div style="height:15px" />
 <h2>Heat - Mass - Heat<sub>req</sub></h2>
+<p>*H<sub>req</sub> represents H<sub>vap</sub> or H<sub>fus</sub></p>
 <HHreq/>
 <HMass/>
 <HreqMass/>
