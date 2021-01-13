@@ -18,6 +18,6 @@
 </table>
 <ul>
     <li>
-        {hreq == null || isNaN(hreq)? "Hreq": hreq} (J/g) * {mass == null? "Mass (mols)": mass} = <b>{heat == null? "ΔHeat": heat}</b>
+        {hreq == null || isNaN(hreq)? "Hreq": hreq} (J/g) * {mass == null? "Mass (mols)": mass} = <b>{heat == null || isNaN(heat)? "ΔHeat": heat}</b>
     </li>
 </ul>
