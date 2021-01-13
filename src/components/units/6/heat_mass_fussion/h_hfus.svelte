@@ -19,7 +19,7 @@
 <ul>
     <li>
         {heat ?? "Heat"} * {hreq ?? "Hreq"} = {mass?? "Mass"} mols
-    <li>
+    </li>
 </ul>
 <!-- //ΔH = Heat (J)
 Hfus = Heat of Fusion (J/g)
