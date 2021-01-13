@@ -40,15 +40,12 @@ export default {
             }),
             typescript(),
             json({
-                // All JSON files will be parsed by default,
-                // but you can also specifically include/exclude files
                 include: 'src/**',
                 // for tree-shaking, properties will be declared as
                 // variables, using either `var` or `const`
                 preferConst: true, // Default: false
-                // ignores indent and generates the smallest code
                 compact: true,
-                namedExports: true // Default: true
+                namedExports: true
             }),
             url({
                 sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
