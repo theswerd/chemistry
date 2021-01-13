@@ -66,7 +66,6 @@
   footer a:hover {
     color: black;
   }
-  
 </style>
 
 <Nav {segment} />
@@ -80,9 +79,14 @@
     <a
       href="https://github.com/theswerd/chemistry/issues/new?assignees=&labels=&template=feature_request.md"
       target="_blank">Request a Feature</a>
-    
+
     <a href="https://instagram.com/ben_swerdlow" target="_blank">Follow me</a>
-    <iframe src="https://github.com/sponsors/theswerd/button" title="Sponsor theswerd" height="35" width="116" style="border: 0;"></iframe>
+    <iframe
+      src="https://github.com/sponsors/theswerd/button"
+      title="Sponsor theswerd"
+      height="35"
+      width="116"
+      style="border: 0;" />
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />
