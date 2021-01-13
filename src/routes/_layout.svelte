@@ -3,8 +3,40 @@
 
   import GoogleAnalytics from "sapper-google-analytics/GoogleAnalytics.svelte";
   import { stores } from "@sapper/app";
+  import { onMount } from "svelte";
 
   let ga_measurment_id = "G-M279NV0YWZ";
+  onMount(() => {
+    console.log(
+      `%c
+                                     
+       / ‾‾ ‾‾ ‾‾ ‾‾ ‾‾ \\            
+      /                  \\           
+     /                    \\          
+    /                      \\         
+   /       Chemistry        \\        
+   \\           is           /        
+    \\         hard         /         
+     \\                    /          
+      \\                  /           
+       \\ __ __ __ __ __ /            
+                                     \
+`,
+      "color: blue; background: black;"
+    );
+
+    console.log(
+      `%c
+                                   
+  Follow me:                       
+  @ben_swerdlow on Instagram       
+  @theswerd on Github              
+  @swerdlowben on Snap             
+                                   
+`,
+      "color: green; background: black;"
+    );
+  });
 
   export let segment;
 </script>
@@ -49,9 +81,7 @@
       target="_blank">Request a Feature</a>
     <a href="https://github.com/sponsors/theswerd" target="_blank">Support
       Chem.land</a>
-      <a
-      href="https://instagram.com/ben_swerdlow"
-      target="_blank">Follow me</a>
+    <a href="https://instagram.com/ben_swerdlow" target="_blank">Follow me</a>
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />
