@@ -12,8 +12,8 @@
         <th>Heat (J)</th>
     </tr>
     <tr>
-        <td><input bind:value={hreq} type="number"/></td>    
-        <td><input bind:value={heat} type="number"/></td>    
+        <td><input bind:value={hreq} type="number" placeholder="0"/></td>    
+        <td><input bind:value={heat} type="number" placeholder="0"/></td>    
     </tr>
 </table>
 <ul>
