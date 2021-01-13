@@ -3,6 +3,13 @@
     let mass;
     let heat_capacity;
     let temp_change;
+    
+    function handleClick(){
+        heat = null,
+        mass = null,
+        heat_capacity = null,
+        temp_change = null
+    }
 
     $: {
         if(mass && heat_capacity && temp_change != null){
@@ -36,6 +43,9 @@
 </table>
 <ul>
     <li>
-        {heat == null? "ΔHeat (J)": heat} = {mass == null? "Mass (g)": mass} * {heat_capacity == null? "Heat Capacity (J/g°C)": heat_capacity} * {temp_change == null? "Change in temp(Final Temp (°C) - Initial Temp (°C))": temp_change}
+        {heat == null? "ΔHeat (J)": heat+"(J)"} = {mass == null? "Mass (g)": mass+"(g)"} * {heat_capacity == null? "Heat Capacity (J/g°C)": heat_capacity+"(J/g°C)"} * {temp_change == null? "Change in temp(Final Temp (°C) - Initial Temp (°C))": temp_change+"(Final Temp - Initial Temp)"}
     </li>
 </ul>
+<button on:click={handleClick}>
+	Click me
+</button>
