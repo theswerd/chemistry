@@ -20,7 +20,16 @@
             heat_capacity != null &&
             temp_change != null
         ) {
-            //FILLER
+            switch (make_bold) {
+                case 1:
+                    heat = mass * heat_capacity * temp_change;
+                case 2:
+                    mass = heat / (heat_capacity * temp_change);
+                case 3:
+                    heat_capacity = heat / (mass * temp_change);
+                case 4:
+                    temp_change = heat / (mass * heat_capacity);
+            }
         } else if (
             mass != null &&
             heat_capacity != null &&
