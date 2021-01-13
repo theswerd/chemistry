@@ -47,10 +47,11 @@
     <a
       href="https://github.com/theswerd/chemistry/issues/new?assignees=&labels=&template=feature_request.md"
       target="_blank">Request a Feature</a>
+    <a href="https://github.com/sponsors/theswerd" target="_blank">Support
+      Chem.land</a>
       <a
-      href="https://github.com/sponsors/theswerd"
-      target="_blank">Support Chem.land</a>
-
+      href="https://instagram.com/ben_swerdlow"
+      target="_blank">Follow me</a>
   </footer>
 </main>
 <GoogleAnalytics {stores} id={ga_measurment_id} />
