@@ -18,7 +18,7 @@
 </table>
 <ul>
     <li>
-        {heat == null? "Heat": null} * {hreq == null? "Hreq": hreq} = {mass ==null? "Mass": mass} mols
+        {heat == null? "Heat": null} * {hreq == null? "Hreq": hreq} = <b>{mass == null || isNaN(mass)? "Mass": mass} mols</b>
     </li>
 </ul>
 <!-- //ΔH = Heat (J)
