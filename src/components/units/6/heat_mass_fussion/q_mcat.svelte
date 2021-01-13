@@ -33,16 +33,16 @@
 <h3>q = mcΔT</h3>
 <table>
     <tr>
-        <th>ΔHeat (J)</th>
-        <th>Mass (g)</th>
-        <th>Specific Heat Capacity (J/g°C)</th>
-        <th>Change in temp (Final Temp (°C) - Initial Temp (°C))</th>
+        <th style="font-weight: {make_bold == 1 ? 'bold' : 'normal'}">ΔHeat (J)</th>
+        <th style="font-weight: {make_bold == 2 ? 'bold' : 'normal'}">Mass (g)</th>
+        <th style="font-weight: {make_bold == 3 ? 'bold' : 'normal'}">Specific Heat Capacity (J/g°C)</th>
+        <th style="font-weight: {make_bold == 4 ? 'bold' : 'normal'}">Change in temp (Final Temp (°C) - Initial Temp (°C))</th>
     </tr>
     <tr>
-        <td><input bind:value={heat} type="number" placeholder="0" /></td>
-        <td><input bind:value={mass} type="number" placeholder="0" /></td>
-        <td><input bind:value={heat_capacity} type="number" placeholder="0" /></td>
-        <td><input bind:value={temp_change} type="number" placeholder="0" /></td>
+        <td><input style="font-weight: {make_bold == 1 ? 'bold' : 'normal'}" bind:value={heat} type="number" placeholder="0" /></td>
+        <td><input style="font-weight: {make_bold == 2 ? 'bold' : 'normal'}" bind:value={mass} type="number" placeholder="0" /></td>
+        <td><input style="font-weight: {make_bold == 3 ? 'bold' : 'normal'}" bind:value={heat_capacity} type="number" placeholder="0" /></td>
+        <td><input style="font-weight: {make_bold == 4 ? 'bold' : 'normal'}" bind:value={temp_change} type="number" placeholder="0" /></td>
     </tr>
 </table>
 <button on:click={handleClick}>
