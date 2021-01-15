@@ -5,7 +5,7 @@
 
     $: mass = hreq / heat;
 </script>
-<h3>Moles from Heat Requirement and ΔHeat</h3>
+<h3>Mass from Heat Requirement and ΔHeat</h3>
 <table>
     <tr>
         <th>H<sub>req</sub> (J/g)</th>
