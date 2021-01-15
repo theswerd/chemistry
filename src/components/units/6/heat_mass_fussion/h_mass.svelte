@@ -8,7 +8,7 @@
 <h3>H<sub>req</sub> from ΔHeat and Mass</h3>
 <table>
     <tr>
-        <th>Mass (mols)</th>
+        <th>Mass (g)</th>
         <th>ΔHeat (J)</th>
     </tr>
     <tr>
@@ -18,6 +18,6 @@
 </table>
 <ul>
     <li>
-        {heat == null? "ΔHeat": heat} / {mass == null? "Mass (mols)": mass} = <b>{hreq == null || isNaN(hreq)? "Hreq": hreq} (J/g)</b>
+        {heat == null? "ΔHeat": heat} / {mass == null? "Mass (g)": mass} = <b>{hreq == null || isNaN(hreq)? "Hreq": hreq} (J/g)</b>
     </li>
 </ul>

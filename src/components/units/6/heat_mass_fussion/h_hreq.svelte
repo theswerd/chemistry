@@ -18,6 +18,6 @@
 </table>
 <ul>
     <li>
-        {heat == null? "Heat": heat} / {hreq == null? "Hreq": hreq} = <b>{mass == null || isNaN(mass)? "Mass": mass} mols</b>
+        {heat == null? "Heat": heat} / {hreq == null? "Hreq": hreq} = <b>{mass == null || isNaN(mass)? "Mass": mass} g</b>
     </li>
 </ul>
